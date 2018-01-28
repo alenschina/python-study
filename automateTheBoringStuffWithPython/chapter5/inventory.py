@@ -11,7 +11,7 @@ def displayInventory(stuff):
     print('Inventory:')
     total = 0
     for key, value in stuff.items():
-        print(str(value) + ' ' + key)
+        print(key.ljust(20, '.') + str(value))
         total += value
     print('Totol count of items: ' + str(total))
 
@@ -24,8 +24,8 @@ def addToInventory(inventory, addedItems):
             inventory.setdefault(item, 1)
 
 
-print('Befor I kill the drgon=========================>')
+print('Befor I kill the drgon'.center(50, '*'))
 displayInventory(inventory)
 addToInventory(inventory, drgonLoot)
-print('After I kill the drgon=========================>')
+print('After I kill the drgon'.center(50, '*'))
 displayInventory(inventory)
